@@ -1,4 +1,4 @@
-package org.meicode.meimall;
+package org.thiha.miniShop;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import org.meicode.meimall.Models.Order;
+import org.thiha.miniShop.Models.Order;
 
 import retrofit2.Call;
 import retrofit2.Callback;

@@ -1,4 +1,4 @@
-package org.meicode.meimall;
+package org.thiha.miniShop;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

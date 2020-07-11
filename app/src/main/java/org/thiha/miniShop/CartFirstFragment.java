@@ -1,4 +1,4 @@
-package org.meicode.meimall;
+package org.thiha.miniShop;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,8 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.meicode.meimall.Models.GroceryItem;
-import org.meicode.meimall.Models.Order;
+import org.thiha.miniShop.Models.GroceryItem;
+import org.thiha.miniShop.Models.Order;
 
 import java.util.ArrayList;
 

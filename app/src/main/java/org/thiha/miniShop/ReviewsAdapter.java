@@ -1,4 +1,4 @@
-package org.meicode.meimall;
+package org.thiha.miniShop;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.meicode.meimall.Models.Review;
+import org.thiha.miniShop.Models.Review;
 
 import java.util.ArrayList;
 

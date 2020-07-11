@@ -1,4 +1,4 @@
-package org.meicode.meimall;
+package org.thiha.miniShop;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,15 +12,13 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import org.meicode.meimall.Models.GroceryItem;
+import org.thiha.miniShop.Models.GroceryItem;
 
 import java.util.ArrayList;
 

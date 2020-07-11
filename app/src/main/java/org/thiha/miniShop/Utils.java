@@ -1,4 +1,4 @@
-package org.meicode.meimall;
+package org.thiha.miniShop;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,9 +7,8 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import org.meicode.meimall.Models.GroceryItem;
-import org.meicode.meimall.Models.Order;
-import org.meicode.meimall.Models.Review;
+import org.thiha.miniShop.Models.GroceryItem;
+import org.thiha.miniShop.Models.Review;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

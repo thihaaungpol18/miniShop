@@ -1,4 +1,4 @@
-package org.meicode.meimall;
+package org.thiha.miniShop;
 
 import android.content.Intent;
 import android.os.Bundle;

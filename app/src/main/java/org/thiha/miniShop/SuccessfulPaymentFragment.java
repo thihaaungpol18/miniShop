@@ -1,4 +1,4 @@
-package org.meicode.meimall;
+package org.thiha.miniShop;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import org.meicode.meimall.Models.GroceryItem;
-import org.meicode.meimall.Models.Order;
+import org.thiha.miniShop.Models.GroceryItem;
+import org.thiha.miniShop.Models.Order;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.meicode.meimall">
+    package="org.thiha.miniShop">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,21 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CartActivity"
-            android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name=".ShowItemsByCategoryActivity" />
         <activity
-            android:name=".SearchActivity"
+            android:name="org.thiha.miniShop.CartActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name="org.thiha.miniShop.ShowItemsByCategoryActivity" />
+        <activity
+            android:name="org.thiha.miniShop.SearchActivity"
             android:windowSoftInputMode="adjustPan|adjustResize" />
-        <activity android:name=".GroceryItemActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="org.thiha.miniShop.GroceryItemActivity" />
+        <activity android:name="org.thiha.miniShop.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".TrackUserTime"/>
+
+        <service android:name="org.thiha.miniShop.TrackUserTime" />
     </application>
 
 </manifest>

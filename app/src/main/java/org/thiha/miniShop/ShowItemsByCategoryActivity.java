@@ -1,4 +1,4 @@
-package org.meicode.meimall;
+package org.thiha.miniShop;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import org.meicode.meimall.Models.GroceryItem;
+import org.thiha.miniShop.Models.GroceryItem;
 
 import java.util.ArrayList;
 

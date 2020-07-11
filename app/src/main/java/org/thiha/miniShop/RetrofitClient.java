@@ -1,6 +1,6 @@
-package org.meicode.meimall;
+package org.thiha.miniShop;
 
-import org.meicode.meimall.Models.Order;
+import org.thiha.miniShop.Models.Order;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

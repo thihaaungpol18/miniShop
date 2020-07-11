@@ -1,4 +1,4 @@
-package org.meicode.meimall.Models;
+package org.thiha.miniShop.Models;
 
 import android.os.Parcel;
 import android.os.Parcelable;

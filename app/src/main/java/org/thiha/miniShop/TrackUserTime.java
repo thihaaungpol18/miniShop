@@ -1,4 +1,4 @@
-package org.meicode.meimall;
+package org.thiha.miniShop;
 
 import android.app.Service;
 import android.content.Intent;
@@ -8,7 +8,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import org.meicode.meimall.Models.GroceryItem;
+import org.thiha.miniShop.Models.GroceryItem;
 
 public class TrackUserTime extends Service {
     private static final String TAG = "TrackUserTime";

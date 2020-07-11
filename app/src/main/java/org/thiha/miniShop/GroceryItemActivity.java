@@ -1,4 +1,4 @@
-package org.meicode.meimall;
+package org.thiha.miniShop;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,8 +18,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-import org.meicode.meimall.Models.GroceryItem;
-import org.meicode.meimall.Models.Review;
+import org.thiha.miniShop.Models.GroceryItem;
+import org.thiha.miniShop.Models.Review;
 
 import java.util.ArrayList;
 
