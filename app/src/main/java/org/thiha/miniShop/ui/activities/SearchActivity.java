@@ -1,9 +1,4 @@
-package org.thiha.miniShop;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+package org.thiha.miniShop.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,9 +11,18 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import org.thiha.miniShop.Models.GroceryItem;
+import org.thiha.miniShop.R;
+import org.thiha.miniShop.model.GroceryItem;
+import org.thiha.miniShop.ui.adapters.GroceryItemAdapter;
+import org.thiha.miniShop.ui.dialogs.ShowAllCategoriesDialog;
+import org.thiha.miniShop.utils.Utils;
 
 import java.util.ArrayList;
 
@@ -151,22 +155,22 @@ public class SearchActivity extends AppCompatActivity implements ShowAllCategori
 
         String text = searchBar.getText().toString();
         ArrayList<GroceryItem> items = utils.searchForItem(text);
-        for (GroceryItem item: items) {
+        for (GroceryItem item : items) {
             utils.increaseUserPoint(item, 3);
         }
         adapter.setItems(items);
     }
 
-    private void initViews () {
+    private void initViews() {
         Log.d(TAG, "initViews: started");
-        searchBar = (EditText) findViewById(R.id.edtTxtSearchBar);
-        btnSearch = (ImageView) findViewById(R.id.btnSearch);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
-        txtFirstCat = (TextView) findViewById(R.id.firstCategory);
-        txtSecondCat = (TextView) findViewById(R.id.secondCategory);
-        txtThirdCat = (TextView) findViewById(R.id.thirdCategory);
-        txtSeeAllCategories = (TextView) findViewById(R.id.btnAllCategories);
+        searchBar = findViewById(R.id.edtTxtSearchBar);
+        btnSearch = findViewById(R.id.btnSearch);
+        recyclerView = findViewById(R.id.recyclerView);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        txtFirstCat = findViewById(R.id.firstCategory);
+        txtSecondCat = findViewById(R.id.secondCategory);
+        txtThirdCat = findViewById(R.id.thirdCategory);
+        txtSeeAllCategories = findViewById(R.id.btnAllCategories);
     }
 
     private void initBottomNavigation() {
@@ -176,8 +180,6 @@ public class SearchActivity extends AppCompatActivity implements ShowAllCategori
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
-                    case R.id.search:
-                        break;
                     case R.id.homeActivity:
                         Intent intent = new Intent(SearchActivity.this, MainActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -188,6 +190,7 @@ public class SearchActivity extends AppCompatActivity implements ShowAllCategori
                         cartIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(cartIntent);
                         break;
+                    case R.id.search:
                     default:
                         break;
                 }

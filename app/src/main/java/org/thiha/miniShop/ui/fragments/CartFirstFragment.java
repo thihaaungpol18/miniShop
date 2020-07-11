@@ -1,4 +1,4 @@
-package org.thiha.miniShop;
+package org.thiha.miniShop.ui.fragments;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,8 +14,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.thiha.miniShop.Models.GroceryItem;
-import org.thiha.miniShop.Models.Order;
+import org.thiha.miniShop.R;
+import org.thiha.miniShop.model.GroceryItem;
+import org.thiha.miniShop.model.Order;
+import org.thiha.miniShop.ui.adapters.CartRecViewAdapter;
+import org.thiha.miniShop.utils.Utils;
 
 import java.util.ArrayList;
 
@@ -29,15 +32,15 @@ public class CartFirstFragment extends Fragment implements CartRecViewAdapter.Ge
         ArrayList<Integer> itemIds = new ArrayList<>();
         itemIds.add(item.getId());
         ArrayList<GroceryItem> items = utils.getItemsById(itemIds);
-        if (items.size()>0) {
+        if (items.size() > 0) {
             ArrayList<Integer> newItemsIds = utils.deleteCartItem(items.get(0));
-            if (newItemsIds.size()==0) {
+            if (newItemsIds.size() == 0) {
                 btnNext.setVisibility(View.GONE);
                 btnNext.setEnabled(false);
                 recyclerView.setVisibility(View.GONE);
                 txtNoItem.setVisibility(View.VISIBLE);
 
-            }else {
+            } else {
                 btnNext.setVisibility(View.VISIBLE);
                 btnNext.setEnabled(true);
                 recyclerView.setVisibility(View.VISIBLE);
@@ -111,7 +114,7 @@ public class CartFirstFragment extends Fragment implements CartRecViewAdapter.Ge
         if (null != itemsIds) {
 
             ArrayList<GroceryItem> items = utils.getItemsById(itemsIds);
-            if (items.size()==0) {
+            if (items.size() == 0) {
                 btnNext.setVisibility(View.GONE);
                 btnNext.setEnabled(false);
                 recyclerView.setVisibility(View.GONE);
@@ -121,7 +124,7 @@ public class CartFirstFragment extends Fragment implements CartRecViewAdapter.Ge
 
             this.items = itemsIds;
             adapter.setItems(items);
-        }else {
+        } else {
             btnNext.setVisibility(View.GONE);
             btnNext.setEnabled(false);
             recyclerView.setVisibility(View.GONE);

@@ -1,4 +1,4 @@
-package org.thiha.miniShop;
+package org.thiha.miniShop.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import org.thiha.miniShop.Models.GroceryItem;
-import org.thiha.miniShop.Models.Order;
+import org.thiha.miniShop.R;
+import org.thiha.miniShop.model.GroceryItem;
+import org.thiha.miniShop.model.Order;
+import org.thiha.miniShop.ui.activities.MainActivity;
+import org.thiha.miniShop.utils.Utils;
 
 import java.util.ArrayList;
 

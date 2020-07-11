@@ -1,4 +1,4 @@
-package org.thiha.miniShop;
+package org.thiha.miniShop.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,8 +7,8 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import org.thiha.miniShop.Models.GroceryItem;
-import org.thiha.miniShop.Models.Review;
+import org.thiha.miniShop.model.GroceryItem;
+import org.thiha.miniShop.model.Review;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

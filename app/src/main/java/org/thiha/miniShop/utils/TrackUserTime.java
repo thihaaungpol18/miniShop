@@ -1,4 +1,4 @@
-package org.thiha.miniShop;
+package org.thiha.miniShop.utils;
 
 import android.app.Service;
 import android.content.Intent;
@@ -8,7 +8,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import org.thiha.miniShop.Models.GroceryItem;
+import org.thiha.miniShop.model.GroceryItem;
 
 public class TrackUserTime extends Service {
     private static final String TAG = "TrackUserTime";
@@ -27,7 +27,7 @@ public class TrackUserTime extends Service {
     }
 
     public class LocalBinder extends Binder {
-        TrackUserTime getService () {
+        public TrackUserTime getService() {
             return TrackUserTime.this;
         }
     }

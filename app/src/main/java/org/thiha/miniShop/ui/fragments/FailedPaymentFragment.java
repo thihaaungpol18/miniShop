@@ -1,4 +1,4 @@
-package org.thiha.miniShop;
+package org.thiha.miniShop.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import org.thiha.miniShop.ui.activities.MainActivity;
+import org.thiha.miniShop.R;
 
 public class FailedPaymentFragment extends Fragment {
     private static final String TAG = "FailedPaymentFragment";

@@ -2,4 +2,10 @@
     <string name="app_name">Mini Shop</string>
     <string name="drawer_closed">drawer_closed</string>
     <string name="drawer_open">drawer_open</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="no_item_available">no item available</string>
+    <string name="reviews">Reviews:</string>
+    <string name="add_a_review">(Add a review)</string>
+    <string name="second_fill_start">Second Fill Start</string>
+    <string name="price">price</string>
 </resources>

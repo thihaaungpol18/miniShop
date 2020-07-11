@@ -1,8 +1,4 @@
-package org.thiha.miniShop;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+package org.thiha.miniShop.ui.activities;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -16,10 +12,19 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 
-import org.thiha.miniShop.Models.GroceryItem;
-import org.thiha.miniShop.Models.Review;
+import org.thiha.miniShop.R;
+import org.thiha.miniShop.model.GroceryItem;
+import org.thiha.miniShop.model.Review;
+import org.thiha.miniShop.ui.adapters.ReviewsAdapter;
+import org.thiha.miniShop.ui.dialogs.AddReviewDialog;
+import org.thiha.miniShop.utils.TrackUserTime;
+import org.thiha.miniShop.utils.Utils;
 
 import java.util.ArrayList;
 
@@ -89,7 +94,7 @@ public class GroceryItemActivity extends AppCompatActivity implements AddReviewD
             changeVisibility(currentRate);
             setViewsValues();
             utils.increaseUserPoint(incomingItem, 1);
-        }catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             e.printStackTrace();
         }
     }
@@ -97,10 +102,10 @@ public class GroceryItemActivity extends AppCompatActivity implements AddReviewD
     /**
      * responsible for setting the initial values for views
      */
-    private void setViewsValues () {
+    private void setViewsValues() {
         Log.d(TAG, "setViewsValues: started");
         txtName.setText(incomingItem.getName());
-        txtPrice.setText(String.valueOf(incomingItem.getPrice() + "$"));
+        txtPrice.setText(incomingItem.getPrice() + "$");
         txtAvailability.setText(incomingItem.getAvailableAmount() + " number(s) available");
         txtDescription.setText(incomingItem.getDescription());
 
@@ -216,7 +221,7 @@ public class GroceryItemActivity extends AppCompatActivity implements AddReviewD
 
     private void changeUserPoint(int stars) {
         Log.d(TAG, "changeUserPoint: started");
-        utils.increaseUserPoint(incomingItem, (stars-currentRate)*2);
+        utils.increaseUserPoint(incomingItem, (stars - currentRate) * 2);
     }
 
     private void updateDatabase(int newRate) {
@@ -224,17 +229,9 @@ public class GroceryItemActivity extends AppCompatActivity implements AddReviewD
         utils.updateTheRate(incomingItem, newRate);
     }
 
-    private void changeVisibility (int newRate) {
+    private void changeVisibility(int newRate) {
         Log.d(TAG, "changeVisibility: started");
         switch (newRate) {
-            case 0:
-                firstFilledStar.setVisibility(View.GONE);
-                secondFilledStar.setVisibility(View.GONE);
-                thirdFilledStar.setVisibility(View.GONE);
-                firstEmptyStar.setVisibility(View.VISIBLE);
-                secondEmptyStar.setVisibility(View.VISIBLE);
-                thirdEmptyStar.setVisibility(View.VISIBLE);
-                break;
             case 1:
                 firstFilledStar.setVisibility(View.VISIBLE);
                 secondFilledStar.setVisibility(View.GONE);
@@ -259,6 +256,7 @@ public class GroceryItemActivity extends AppCompatActivity implements AddReviewD
                 secondEmptyStar.setVisibility(View.GONE);
                 thirdEmptyStar.setVisibility(View.GONE);
                 break;
+            case 0:
             default:
                 firstFilledStar.setVisibility(View.GONE);
                 secondFilledStar.setVisibility(View.GONE);
@@ -270,37 +268,33 @@ public class GroceryItemActivity extends AppCompatActivity implements AddReviewD
         }
     }
 
-    private boolean checkIfRateHasChanged (int newRate) {
+    private boolean checkIfRateHasChanged(int newRate) {
         Log.d(TAG, "checkIfRateHasChanged: started");
-        if (newRate == currentRate) {
-            return false;
-        }else {
-            return true;
-        }
+        return newRate != currentRate;
     }
 
-    private void initViews () {
+    private void initViews() {
         Log.d(TAG, "initViews: started");
 
-        txtName = (TextView) findViewById(R.id.txtName);
-        txtPrice = (TextView) findViewById(R.id.txtPrice);
-        txtDescription = (TextView) findViewById(R.id.txtDesc);
-        txtAvailability = (TextView) findViewById(R.id.txtAvailability);
+        txtName = findViewById(R.id.txtName);
+        txtPrice = findViewById(R.id.txtPrice);
+        txtDescription = findViewById(R.id.txtDesc);
+        txtAvailability = findViewById(R.id.txtAvailability);
 
-        itemImage = (ImageView) findViewById(R.id.itemImage);
+        itemImage = findViewById(R.id.itemImage);
 
-        btnAddToCart = (Button) findViewById(R.id.btnAddToCart);
+        btnAddToCart = findViewById(R.id.btnAddToCart);
 
-        firstFilledStar = (ImageView) findViewById(R.id.firstFilledStar);
-        secondFilledStar = (ImageView) findViewById(R.id.secondFilledStar);
-        thirdFilledStar = (ImageView) findViewById(R.id.thirdFilledStar);
-        firstEmptyStar = (ImageView) findViewById(R.id.firstEmptyStar);
-        secondEmptyStar = (ImageView) findViewById(R.id.secondEmptyStar);
-        thirdEmptyStar = (ImageView) findViewById(R.id.thirdEmptyStar);
+        firstFilledStar = findViewById(R.id.firstFilledStar);
+        secondFilledStar = findViewById(R.id.secondFilledStar);
+        thirdFilledStar = findViewById(R.id.thirdFilledStar);
+        firstEmptyStar = findViewById(R.id.firstEmptyStar);
+        secondEmptyStar = findViewById(R.id.secondEmptyStar);
+        thirdEmptyStar = findViewById(R.id.thirdEmptyStar);
 
-        reviewsRecView = (RecyclerView) findViewById(R.id.reviewsRecView);
+        reviewsRecView = findViewById(R.id.reviewsRecView);
 
-        addReviewRelLayout = (RelativeLayout) findViewById(R.id.addReviewRelLayout);
+        addReviewRelLayout = findViewById(R.id.addReviewRelLayout);
     }
 
     @Override

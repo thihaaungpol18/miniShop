@@ -1,4 +1,4 @@
-package org.thiha.miniShop;
+package org.thiha.miniShop.ui.adapters;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -12,7 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.thiha.miniShop.Models.GroceryItem;
+import org.thiha.miniShop.R;
+import org.thiha.miniShop.model.GroceryItem;
 
 import java.util.ArrayList;
 
@@ -38,15 +39,11 @@ public class CartRecViewAdapter extends RecyclerView.Adapter<CartRecViewAdapter.
 
     private ArrayList<GroceryItem> items = new ArrayList<>();
 
-    public CartRecViewAdapter() {
-    }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_items_rec_view_list_item, parent, false);
-        ViewHolder holder = new ViewHolder(view);
-        return holder;
+        return new ViewHolder(view);
     }
 
     @Override
@@ -91,24 +88,24 @@ public class CartRecViewAdapter extends RecyclerView.Adapter<CartRecViewAdapter.
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            txtName = (TextView) itemView.findViewById(R.id.txtName);
-            txtPrice = (TextView) itemView.findViewById(R.id.txtPrice);
-            txtDelete = (TextView) itemView.findViewById(R.id.btnDelete);
+            txtName = itemView.findViewById(R.id.txtName);
+            txtPrice = itemView.findViewById(R.id.txtPrice);
+            txtDelete = itemView.findViewById(R.id.btnDelete);
         }
     }
 
-    private void calculatePrice () {
+    private void calculatePrice() {
         Log.d(TAG, "calculatePrice: started");
 
-        try{
+        try {
             getTotalPrice = (GetTotalPrice) fragment;
-        }catch (ClassCastException e) {
+        } catch (ClassCastException e) {
             e.printStackTrace();
         }
 
         double totalPrice = 0;
-        for (GroceryItem item: items) {
-                        totalPrice+=item.getPrice();
+        for (GroceryItem item : items) {
+            totalPrice += item.getPrice();
         }
 
         getTotalPrice.onGettingTotalPriceResult(totalPrice);

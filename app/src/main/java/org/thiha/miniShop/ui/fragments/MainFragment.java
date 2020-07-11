@@ -1,4 +1,4 @@
-package org.thiha.miniShop;
+package org.thiha.miniShop.ui.fragments;
 
 
 import android.content.Intent;
@@ -17,7 +17,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import org.thiha.miniShop.Models.GroceryItem;
+import org.thiha.miniShop.model.GroceryItem;
+import org.thiha.miniShop.R;
+import org.thiha.miniShop.ui.activities.SearchActivity;
+import org.thiha.miniShop.utils.Utils;
+import org.thiha.miniShop.ui.activities.CartActivity;
+import org.thiha.miniShop.ui.adapters.GroceryItemAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -119,13 +124,13 @@ public class MainFragment extends Fragment {
         super.onResume();
     }
 
-    private int compareByPopularity (GroceryItem item1, GroceryItem item2) {
+    private int compareByPopularity(GroceryItem item1, GroceryItem item2) {
         Log.d(TAG, "compareByPopularity: started");
-        if (item1.getPopularityPoint()>item2.getPopularityPoint()) {
+        if (item1.getPopularityPoint() > item2.getPopularityPoint()) {
             return 1;
-        }else if (item1.getPopularityPoint()<item2.getPopularityPoint()) {
+        } else if (item1.getPopularityPoint() < item2.getPopularityPoint()) {
             return -1;
-        }else {
+        } else {
             return 0;
         }
     }
@@ -161,9 +166,9 @@ public class MainFragment extends Fragment {
 
     private void initViews(View view) {
         Log.d(TAG, "initViews: started");
-        bottomNavigationView = (BottomNavigationView) view.findViewById(R.id.bottomNavigationView);
-        newItemsRecView = (RecyclerView) view.findViewById(R.id.newItemsRecView);
-        popularItemsRecView = (RecyclerView) view.findViewById(R.id.popularItems);
-        suggestedItemsRecView = (RecyclerView) view.findViewById(R.id.suggestedItems);
+        bottomNavigationView = view.findViewById(R.id.bottomNavigationView);
+        newItemsRecView = view.findViewById(R.id.newItemsRecView);
+        popularItemsRecView = view.findViewById(R.id.popularItems);
+        suggestedItemsRecView = view.findViewById(R.id.suggestedItems);
     }
 }

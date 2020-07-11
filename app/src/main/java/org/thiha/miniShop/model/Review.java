@@ -1,4 +1,4 @@
-package org.thiha.miniShop.Models;
+package org.thiha.miniShop.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

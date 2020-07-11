@@ -12,14 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="org.thiha.miniShop.CartActivity"
+            android:name="org.thiha.miniShop.ui.activities.CartActivity"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name="org.thiha.miniShop.ShowItemsByCategoryActivity" />
+        <activity android:name="org.thiha.miniShop.ui.activities.ShowItemsByCategoryActivity" />
         <activity
-            android:name="org.thiha.miniShop.SearchActivity"
+            android:name="org.thiha.miniShop.ui.activities.SearchActivity"
             android:windowSoftInputMode="adjustPan|adjustResize" />
-        <activity android:name="org.thiha.miniShop.GroceryItemActivity" />
-        <activity android:name="org.thiha.miniShop.MainActivity">
+        <activity android:name="org.thiha.miniShop.ui.activities.GroceryItemActivity" />
+        <activity android:name="org.thiha.miniShop.ui.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name="org.thiha.miniShop.TrackUserTime" />
+        <service android:name="org.thiha.miniShop.utils.TrackUserTime" />
     </application>
 
 </manifest>

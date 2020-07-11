@@ -1,4 +1,4 @@
-package org.thiha.miniShop;
+package org.thiha.miniShop.ui.dialogs;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -12,11 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
-public class LicensesDialog extends DialogFragment {
-    private static final String TAG = "LicensesDialog";
+import org.thiha.miniShop.R;
 
-    private TextView textView;
-    private Button btnDismiss;
+public class LicensesDialog extends DialogFragment {
+
+    private static final String TAG = "LicensesDialog";
 
     @NonNull
     @Override
@@ -26,10 +26,10 @@ public class LicensesDialog extends DialogFragment {
                 .setView(view)
                 .setTitle("Licences");
 
-        textView = (TextView) view.findViewById(R.id.textView);
+        TextView textView = view.findViewById(R.id.textView);
         textView.setText(getLicencesText());
 
-        btnDismiss = (Button) view.findViewById(R.id.btnDismiss);
+        Button btnDismiss = view.findViewById(R.id.btnDismiss);
         btnDismiss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,7 +39,7 @@ public class LicensesDialog extends DialogFragment {
         return builder.create();
     }
 
-    private String getLicencesText () {
+    private String getLicencesText() {
         Log.d(TAG, "getLicencesText: started");
 
         String message = "";

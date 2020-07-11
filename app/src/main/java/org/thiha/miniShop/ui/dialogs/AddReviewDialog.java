@@ -1,4 +1,4 @@
-package org.thiha.miniShop;
+package org.thiha.miniShop.ui.dialogs;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -13,8 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
-import org.thiha.miniShop.Models.GroceryItem;
-import org.thiha.miniShop.Models.Review;
+import org.thiha.miniShop.model.GroceryItem;
+import org.thiha.miniShop.model.Review;
+import org.thiha.miniShop.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -30,7 +31,7 @@ public class AddReviewDialog extends DialogFragment {
     private int itemId = 0;
 
     public interface AddReview {
-        void onAddReviewResult (Review review);
+        void onAddReviewResult(Review review);
     }
 
     private AddReview addReview;
@@ -49,7 +50,7 @@ public class AddReviewDialog extends DialogFragment {
             GroceryItem item = bundle.getParcelable("item");
             txtItemName.setText(item.getName());
             this.itemId = item.getId();
-        }catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             e.printStackTrace();
         }
 
@@ -63,7 +64,7 @@ public class AddReviewDialog extends DialogFragment {
         return builder.create();
     }
 
-    private void addReview () {
+    private void addReview() {
         Log.d(TAG, "addReview: started");
 
         if (validateData()) {
@@ -76,25 +77,24 @@ public class AddReviewDialog extends DialogFragment {
             try {
                 addReview = (AddReview) getActivity();
 
-                addReview.onAddReviewResult(review);
+                if (addReview != null) {
+                    addReview.onAddReviewResult(review);
+                }
                 dismiss();
-            }catch (ClassCastException e) {
+            } catch (ClassCastException e) {
                 e.printStackTrace();
             }
-        }else {
+        } else {
             txtWarning.setVisibility(View.VISIBLE);
         }
     }
 
-    private boolean validateData () {
+    private boolean validateData() {
         Log.d(TAG, "validateData: started");
         if (edtTxtName.getText().toString().equals("")) {
             return false;
         }
-        if (edtTxtReview.getText().toString().equals("")) {
-            return false;
-        }
-        return true;
+        return !edtTxtReview.getText().toString().equals("");
     }
 
     private String getCurrentDate() {
@@ -105,12 +105,12 @@ public class AddReviewDialog extends DialogFragment {
         return sdf.format(date);
     }
 
-    private void initViews (View view) {
+    private void initViews(View view) {
         Log.d(TAG, "initViews: started");
-        edtTxtName = (EditText) view.findViewById(R.id.edtTxtName);
-        edtTxtReview = (EditText) view.findViewById(R.id.edtTxtReview);
-        txtItemName = (TextView) view.findViewById(R.id.reviewName);
-        txtWarning = (TextView) view.findViewById(R.id.txtWarning);
-        btnAddReview = (Button) view.findViewById(R.id.btnAdd);
+        edtTxtName = view.findViewById(R.id.edtTxtName);
+        edtTxtReview = view.findViewById(R.id.edtTxtReview);
+        txtItemName = view.findViewById(R.id.reviewName);
+        txtWarning = view.findViewById(R.id.txtWarning);
+        btnAddReview = view.findViewById(R.id.btnAdd);
     }
 }

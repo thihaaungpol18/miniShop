@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GroceryItemActivity">
+    tools:context=".ui.activities.GroceryItemActivity">
 
     <Button
         android:id="@+id/btnAddToCart"
@@ -13,7 +12,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="15dp"
-        android:text="Add to Cart" />
+        android:text="@string/add_to_cart" />
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
@@ -37,19 +36,19 @@
                     android:id="@+id/txtName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="name"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="name" />
 
                 <TextView
+                    android:id="@+id/txtPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:text="price"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/price"
                     android:textColor="@color/colorAccent"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:id="@+id/txtPrice"/>
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
@@ -68,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/itemImage"
                 android:layout_marginTop="10dp"
-                android:text="no item available" />
+                android:text="@string/no_item_available" />
 
             <TextView
                 android:id="@+id/txtDesc"
@@ -76,15 +75,15 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtAvailability"
                 android:layout_marginTop="10dp"
-                android:text="description in here"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                tools:text="description in here" />
 
             <RelativeLayout
                 android:id="@+id/starsRelLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtAvailability"
-                android:layout_alignParentRight="true">
+                android:layout_alignParentEnd="true">
 
                 <RelativeLayout
                     android:id="@+id/firstStarRelLayout"
@@ -110,7 +109,7 @@
                     android:id="@+id/secondStarRelLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/firstStarRelLayout">
+                    android:layout_toEndOf="@+id/firstStarRelLayout">
 
                     <ImageView
                         android:id="@+id/secondEmptyStar"
@@ -119,6 +118,7 @@
                         android:src="@drawable/ic_empty_star" />
 
                     <ImageView
+                        android:contentDescription="@string/second_fill_start"
                         android:id="@+id/secondFilledStar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -131,7 +131,7 @@
                     android:id="@+id/thirdStarRelLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/secondStarRelLayout">
+                    android:layout_toEndOf="@+id/secondStarRelLayout">
 
                     <ImageView
                         android:id="@+id/thirdEmptyStar"
@@ -155,9 +155,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtDesc"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="25dp"
-                android:text="Reviews: "
+                android:text="@string/reviews"
                 android:textStyle="bold|italic" />
 
             <RelativeLayout
@@ -176,9 +176,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@+id/addImage"
-                    android:text="(Add a review)"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/addImage"
+                    android:text="@string/add_a_review"
                     android:textColor="@color/colorAccent" />
 
             </RelativeLayout>

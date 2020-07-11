@@ -1,4 +1,4 @@
-package org.thiha.miniShop;
+package org.thiha.miniShop.ui.adapters;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,7 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.thiha.miniShop.Models.Review;
+import org.thiha.miniShop.R;
+import org.thiha.miniShop.model.Review;
 
 import java.util.ArrayList;
 
@@ -25,8 +26,7 @@ public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.review_adapter_list_item, parent, false);
-        ViewHolder holder = new ViewHolder(view);
-        return holder;
+        return new ViewHolder(view);
     }
 
     @Override
@@ -49,9 +49,9 @@ public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ViewHold
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            name = (TextView) itemView.findViewById(R.id.username);
-            text = (TextView) itemView.findViewById(R.id.reviewText);
-            date = (TextView) itemView.findViewById(R.id.txtDate);
+            name = itemView.findViewById(R.id.username);
+            text = itemView.findViewById(R.id.reviewText);
+            date = itemView.findViewById(R.id.txtDate);
         }
     }
 

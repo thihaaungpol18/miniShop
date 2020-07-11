@@ -1,4 +1,4 @@
-package org.thiha.miniShop;
+package org.thiha.miniShop.ui.fragments;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import org.thiha.miniShop.Models.Order;
+import org.thiha.miniShop.R;
+import org.thiha.miniShop.model.Order;
+import org.thiha.miniShop.model.retrofit.RetrofitClient;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -41,13 +43,13 @@ public class ThirdCartFragment extends Fragment {
         Bundle bundle = getArguments();
         try {
             incomingOrder = bundle.getParcelable("order");
-        }catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             e.printStackTrace();
         }
 
         if (null != incomingOrder) {
             txtPrice.setText(String.valueOf(incomingOrder.getTotalPrice()));
-            String finalString = "Items:\n\tAddress: " + incomingOrder.getAddress()+ "\n\t" +
+            String finalString = "Items:\n\tAddress: " + incomingOrder.getAddress() + "\n\t" +
                     "Email: " + incomingOrder.getEmail() + "\n\t" +
                     "Zip code: " + incomingOrder.getZipCode() + "\n\t" +
                     "Phone Number: " + incomingOrder.getPhoneNumber();
@@ -127,7 +129,7 @@ public class ThirdCartFragment extends Fragment {
             getActivity().getSupportFragmentManager().beginTransaction()
                     .setCustomAnimations(R.anim.in, R.anim.out)
                     .replace(R.id.fragment_container, successfulPaymentFragment).commit();
-        }else {
+        } else {
 
 
             FailedPaymentFragment failedPaymentFragment = new FailedPaymentFragment();

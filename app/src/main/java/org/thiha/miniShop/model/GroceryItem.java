@@ -1,9 +1,9 @@
-package org.thiha.miniShop.Models;
+package org.thiha.miniShop.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import org.thiha.miniShop.Utils;
+import org.thiha.miniShop.utils.Utils;
 
 import java.util.ArrayList;
 

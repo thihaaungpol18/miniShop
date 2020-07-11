@@ -1,15 +1,18 @@
-package org.thiha.miniShop;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
+package org.thiha.miniShop.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import org.thiha.miniShop.R;
+import org.thiha.miniShop.ui.fragments.CartFirstFragment;
 
 public class CartActivity extends AppCompatActivity {
     private static final String TAG = "CartActivity";
@@ -31,7 +34,7 @@ public class CartActivity extends AppCompatActivity {
 
     private void initBottomNavView() {
         Log.d(TAG, "initBottomNavView: started");
-        bottomNavigationView.setSelectedItemId(R.id.cart);;
+        bottomNavigationView.setSelectedItemId(R.id.cart);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -56,6 +59,6 @@ public class CartActivity extends AppCompatActivity {
 
     private void initViews() {
         Log.d(TAG, "initViews: started");
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView);
+        bottomNavigationView = findViewById(R.id.bottomNavView);
     }
 }

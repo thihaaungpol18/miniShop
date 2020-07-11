@@ -1,4 +1,4 @@
-package org.thiha.miniShop;
+package org.thiha.miniShop.ui.fragments;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -18,7 +18,8 @@ import androidx.annotation.Nullable;
 import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 
-import org.thiha.miniShop.Models.Order;
+import org.thiha.miniShop.model.Order;
+import org.thiha.miniShop.R;
 
 public class CartSecondFragment extends Fragment {
     private static final String TAG = "CartSecondFragment";

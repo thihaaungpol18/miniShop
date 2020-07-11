@@ -1,6 +1,6 @@
-package org.thiha.miniShop;
+package org.thiha.miniShop.model.retrofit;
 
-import org.thiha.miniShop.Models.Order;
+import org.thiha.miniShop.model.Order;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
